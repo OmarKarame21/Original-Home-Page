@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.background11 {
+  opacity: 0.75;
+}
+.centered {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  color: black;
+  font-weight: bold;
+}
+.info {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
