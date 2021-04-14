@@ -93,11 +93,10 @@ img {
   border-radius: 25px;
   transition: 0.4s;
 }
-.buttons .btn2 {
+.buttons .btn2 .btn1 {
+  text-align: center;
   margin-left: 25px;
 }
 .buttons button:hover {
   background: red;
 }
-
-/*        <img className="logo" src={logo} />*/

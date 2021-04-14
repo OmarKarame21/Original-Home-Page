@@ -51,11 +51,12 @@ const Homepage = () => {
 
       <div className="center">
         <div className="buttons">
-          <button onClick={() => LoginButton()}>Login</button>
+          <button onClick={() => LoginButton()} className="btn1">
+            Login
+          </button>
           <button onClick={() => RegisterButton()} className="btn2">
             Register
           </button>
-          <img className="logo" src={logo} alt="logo" />
         </div>
       </div>
     </div>
