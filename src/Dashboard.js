@@ -3,7 +3,7 @@ import ReactToolTip from "react-tooltip";
 import { useAuth } from "./contexts/authcontext";
 import { useHistory } from "react-router-dom";
 import { database } from "./firebase";
-import GoogleMaps from "./components/NewGoogleMapsThree";
+import GoogleMaps from "./components/GoogleMaps";
 
 import "./dash.css";
 //import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -20,6 +20,7 @@ function App() {
     <>
       <div className="app">
         {/* <main> */}
+        <h1> Dashboard </h1>
         <div className="container">
           <span id="box-holder">
             <input
