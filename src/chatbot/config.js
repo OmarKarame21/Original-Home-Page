@@ -1,7 +1,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import React from "react";
-import Options from "../Components/Options/Options";
-import Quiz from "../Components/Quiz/Quiz";
+import Options from "../components/Options/Options";
+import Quiz from "../components/Quiz/Quiz";
 
 const config = {
   botName: "Admin",

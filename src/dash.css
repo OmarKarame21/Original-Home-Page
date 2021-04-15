@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  font-family: sans-serif;
+  color: white;
+  font-size: 19px;
+  background-color: #351f31;
+}
+.App-header {
+  width: 100%;
+  overflow: hidden;
+  height: 55px;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+.box-holder {
+  margin-top: 0.5em;
+  left: 500px;
+  position: relative;
+  width: 250px;
+  height: 20px;
+  font-family: cursive;
+}
+.search-bar {
+  float: right;
+  left: 350px;
+  width: 300px;
+  height: 30%;
+  border-radius: 15px;
+  border: 1px solid #fff;
+}
+.pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  background-color: #2f2e2e;
+  padding-right: 24%;
+  margin-bottom: 6%;
+}
+
+.card {
+  float: left;
+  margin-left: -170px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  background-color: #f2ead6;
+}
+
+.google-map-container {
+  background-color: white;
+}
+
+.map-header {
+  color: #2f2e2e;
+  text-align: center;
+  margin-bottom: 1%;
+  font-size: 230%;
+  letter-spacing: 5px;
+}
+
+.map-header-2 {
+  color: #2f2e2e;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+.map {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  background-color: #351f31;
+  padding: 2%;
+}
+
+footer {
+  background-color: #2f2e2e;
+  padding-top: 5%;
+}
+
+.footer-container {
+  background-color: #2f2e2e;
+  color: #dac9d8;
+  text-align: center;
+  font-size: 150%;
+  padding-bottom: 10%;
+}
