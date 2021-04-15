@@ -20,6 +20,7 @@ function App() {
     <>
       <div className="app">
         {/* <main> */}
+        <h1> Dashboard </h1>
         <div className="container">
           <span id="box-holder">
             <input
