@@ -1,0 +1,14 @@
+.flashcard-container {
+  padding: 15px;
+  border-radius: 3px;
+  background-color: #351f31;
+}
+
+.flashcard-button {
+  background: transparent;
+  padding: 8px;
+  border-radius: 3px;
+  border-color: #351f31;
+  margin: 5px;
+  width: 150px;
+}

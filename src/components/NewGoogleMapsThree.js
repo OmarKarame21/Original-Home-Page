@@ -22,6 +22,7 @@ import {
   getLatLng as getLatLng2
 } from "react-places-autocomplete";
 import { firestore } from "../firebase";
+import GetListings from "../GetListings";
 
 const containerStyle = {
   width: "100vw",
@@ -51,6 +52,8 @@ export default function GSearch() {
     []
   );
 
+  const [flag, setFlag] = useState(false);
+
   const mapRef = useRef();
   const onMapLoad = useCallback((map) => {
     mapRef.current = map;
@@ -73,18 +76,24 @@ export default function GSearch() {
 
   return (
     <div>
-      <LoadScript
-        googleMapsApiKey="AIzaSyC44LmEfw4hs78DkfdGjAnAXbL6PO8-AUQ"
-        libraries={libraries}
-      >
-        <AutoSearch panTo={panTo} placePin={onMapClick} />
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={10}
-          onLoad={onMapLoad}
+      <div>
+        <LoadScript
+          googleMapsApiKey="AIzaSyC44LmEfw4hs78DkfdGjAnAXbL6PO8-AUQ"
+          libraries={libraries}
         >
-          <React.Fragment>
+          <AutoSearch
+            panTo={panTo}
+            placePin={onMapClick}
+            setFlag={setFlag}
+            flag={flag}
+            onSubmit={() => setFlag(true)}
+          />
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={10}
+            onLoad={onMapLoad}
+          >
             {markers.map((marker) => (
               <Marker
                 key={marker.time.toISOString()}
@@ -94,26 +103,18 @@ export default function GSearch() {
                 }}
               />
             ))}
-
-            {curSelect ? (
-              <InfoWindow
-                position={curSelect}
-                onCloseClick={() => {
-                  setCurSelect(null);
-                }}
-              >
-                <ListingsRender placePin={onMapClick} />
-              </InfoWindow>
-            ) : null}
-          </React.Fragment>
-        </GoogleMap>
-      </LoadScript>
+          </GoogleMap>
+        </LoadScript>
+        <GetListings placePin={onMapClick} setValues={setValues}></GetListings>
+      </div>
     </div>
   );
 }
 
 function ListingsRender({ placePin }) {
+  /*
   const [currrentLatLng, setCurrentLatLng] = useState();
+  const [curData, setd] = useState();
 
   const {
     ready,
@@ -132,12 +133,12 @@ function ListingsRender({ placePin }) {
     var tutorialsRef = firestore.collection("Listings");
     const snapshot = await tutorialsRef.get();
     snapshot.forEach((doc) => {
-      var data = doc.data().location;
+      //setd(doc.data().location);
     });
-    const results = await getGeocode("Queen Mary University");
+    //const results = await getGeocode(curData);
     const { lat, lng } = await getLatLng(results[0]);
     placePin({ lat, lng });
-  }
+  }*/
 
   /*
   async function funct1() {
@@ -159,12 +160,15 @@ function ListingsRender({ placePin }) {
   //use the acc html code e.g. what is done below to show boxes/pins
   return (
     <div>
-      <p> hi </p>
+      <p> Title: </p>
+      <p> Price: </p>
+      <p> Description: </p>
+      <p> Location: </p>
     </div>
   );
 }
 
-function AutoSearch({ panTo, placePin }) {
+function AutoSearch({ panTo, placePin, setFlag, flag }) {
   const [currrentLatLng, setCurrentLatLng] = useState();
 
   const {
@@ -239,6 +243,8 @@ function AutoSearch({ panTo, placePin }) {
   return (
     <Combobox
       onSelect={async (address) => {
+        //setFlag(true);
+        //console.log(flag);
         setValue(address, false);
         clearSuggestions();
         try {
@@ -385,3 +391,18 @@ function AutoSearch({ panTo, placePin }) {
 //
 
 // return <div>test123</div>;
+
+/* not working code for info window on markers
+
+<React.Fragment>
+              {curSelect ? (
+                <InfoWindow
+                  position={curSelect}
+                  onCloseClick={() => {
+                    setCurSelect(null);
+                  }}
+                ></InfoWindow>
+              ) : null}
+            </React.Fragment>
+
+*/
